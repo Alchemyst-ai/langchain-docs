@@ -21,8 +21,7 @@ async function main() {
     async (input: string) => {
       const docs = await retriever.getRelevantDocuments(input);
       return docs.map(doc => doc.pageContent).join("\n---\n");
-    },
-    new StringOutputParser()
+    }
   ]);
 
   const query = "Tell me about Quantum Entanglement"; // Put your query here
